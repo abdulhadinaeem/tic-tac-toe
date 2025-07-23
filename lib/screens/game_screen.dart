@@ -11,16 +11,23 @@ class GameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final roomDataProvider = Provider.of<RoomDataProvider>(context,);
-    print(Provider.of<RoomDataProvider>(context, listen: false).player1.nickname);
-    print(Provider.of<RoomDataProvider>(context, listen: false).player2.nickname);
+    final roomDataProvider = Provider.of<RoomDataProvider>(context);
+    print(
+      Provider.of<RoomDataProvider>(context, listen: false).player1.nickname,
+    );
+    print(
+      Provider.of<RoomDataProvider>(context, listen: false).player2.nickname,
+    );
     return Scaffold(
-      body:roomDataProvider.roomData['isJoin']?WaitScreen(): Center(
-        child: Text(
-          'Game Screen',
-          style: TextStyle(fontSize: 24, color: Colors.white),
-        ),
-      ),
+      body:
+          roomDataProvider.roomData['isJoin']
+              ? WaitScreen()
+              : Center(
+                child: Text(
+                  'Game Screen',
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ),
     );
   }
 }

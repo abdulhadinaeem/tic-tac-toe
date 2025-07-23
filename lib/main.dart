@@ -19,18 +19,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (BuildContext context) { 
+      create: (BuildContext context) {
         return RoomDataProvider();
-       },
+      },
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: bgColor),
         routes: {
-          MainMenuScreen.routeName: (_)=> MainMenuScreen(),
-              JoinRoomScreen.routeName: (_)=> JoinRoomScreen(),
-                  CreateRoomScreen.routeName: (_)=> CreateRoomScreen(),
-                  GameScreen.routeName: (_)=> GameScreen(),
-                  WaitScreen  .routeName: (_)=> WaitScreen(),
+          MainMenuScreen.routeName: (_) => MainMenuScreen(),
+          JoinRoomScreen.routeName: (_) => JoinRoomScreen(),
+          CreateRoomScreen.routeName: (_) => CreateRoomScreen(),
+          GameScreen.routeName: (_) => GameScreen(),
+          WaitScreen.routeName: (_) => WaitScreen(),
         },
         // home: const MainMenuScreen(),
         initialRoute: MainMenuScreen.routeName,
